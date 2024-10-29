@@ -179,7 +179,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
             }
         }
 
-        Invoke-RestMethod https://github.com/nightconcept/dotfiles/raw/main/windows/powershell/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
+        Invoke-RestMethod https://github.com/nightconcept/automatic-os-setup/raw/main/windows/powershell/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
         Write-Host "The profile @ [$PROFILE] has been created."
         write-host "if you want to add any persistent components, please do so at
         [$HOME\Documents\PowerShell\Profile.ps1] as there is an updater in the installed profile 
@@ -192,7 +192,7 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
 # If the file already exists, show the message and do nothing.
  else {
 		 Get-Item -Path $PROFILE | Move-Item -Destination oldprofile.ps1 -Force
-		 Invoke-RestMethod https://github.com/nightconcept/dotfiles/raw/main/windows/powershell/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
+		 Invoke-RestMethod https://github.com/nightconcept/automatic-os-setup/raw/main/windows/powershell/Microsoft.PowerShell_profile.ps1 -OutFile $PROFILE
 		 Write-Host "The profile @ [$PROFILE] has been created and old profile removed."
          write-host "Please back up any persistent components of your old profile to [$HOME\Documents\PowerShell\Profile.ps1]
          as there is an updater in the installed profile which uses the hash to update the profile 
@@ -202,12 +202,6 @@ if (!(Test-Path -Path $PROFILE -PathType Leaf)) {
 
 # Terminal Icons Install
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
-
-##############
-# Get dotfiles
-##############
-Set-Location $HOME
-git clone https://github.com/nightconcept/dotfiles.git
 
 ##############
 # Run winutils

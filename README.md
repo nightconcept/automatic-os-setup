@@ -1,5 +1,5 @@
 # automatic-os-setup
-These are all my dotfiles and configurations that are meant to be interoporable between some machines that I use that do not support Nix (see dotfiles-nix repository) and/or need extra system packages on top of Nix package management. This repository is intended to setup and configure everything else needed locally based off the OS.
+These are all my imperative configuration scripts for machines that I use that do not support Nix (see dotfiles-nix repository) and/or need extra system packages on top of Nix package management. This repository is intended to setup and configure everything else needed locally based off the OS.
 
 ## Supported OS
 - Windows 10/11 (See separate [Windows installation instructions](#run-the-install-windows))
@@ -25,13 +25,13 @@ sudo apt install python -y
 
 
 ### Run the Install (Arch/Ubuntu/Fedora)
-First, check out the dotfiles repo in your $HOME directory using git.
+First, check out the automatic-os-setup repo in your $HOME directory using git.
 
 1. Download
 ```sh
 cd ~
 git clone https://github.com/nightconcept/automatic-os-setup.git
-cd ~/dotfiles/install
+cd ~/automatic-os-setup/install
 ```
 2. Install Applications
 ```sh
@@ -44,7 +44,7 @@ Copy and paste the code below into your PowerShell terminal to get your Windows 
 
 ```powershell
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$url = "https://raw.githubusercontent.com/nightconcept/dotfiles/main/install/install-windows.ps1"
+$url = "https://raw.githubusercontent.com/nightconcept/automatic-os-setup/main/install/install-windows.ps1"
 $file = "${HOME}\install-windows.ps1"
 (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
 $file
@@ -54,7 +54,7 @@ $file
 To save some time with some requirements checking, just run this script to re-run the Ansible playbook. This functions similar to `nixos-rebuild switch` where your system is rebuilt to the configuration.
 
 ```sh
-cd ~/dotfiles/install
+cd ~/automatic-os-setup/install
 chmod +x ./rebuild.sh
 ./rebuild.sh
 ```
