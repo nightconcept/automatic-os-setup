@@ -1,0 +1,15 @@
+- name: Install dnf packages on Fedora
+  become: true
+  ansible.builtin.dnf5:
+    state: latest
+    name: "{{ item.name | default(item) }}"
+  loop: "{{ fedora_add }}"
+  when: ansible_distribution == "Fedora"
+
+- name: Remove dnf packages on Fedora
+  become: true
+  ansible.builtin.dnf5:
+    state: absent
+    name: "{{ item.name | default(item) }}"
+  loop: "{{ fedora_remove }}"
+  when: ansible_distribution == "Fedora"
