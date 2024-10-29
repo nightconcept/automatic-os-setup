@@ -34,12 +34,12 @@ elif [ "$DISTRO" == "ManjaroLinux" ]; then
 	sudo apt update
 	sudo apt -y install ansible
 	export PATH="$PATH:~/.local/bin"
-elif  ["$DISTRO" == "EndeavourOS" ]; then
+elif ["$DISTRO" == "EndeavourOS" ]; then
 	python3 -m venv venv
 	source venv/bin/activate
 	pip3 install ansible
 	export PATH="$PATH:~/.local/bin"
-elif  ["$DISTRO" == "Fedora" ]; then
+elif ["$DISTRO" == "Fedora" ]; then
 	sudo dnf update
 	sudo dnf -y install ansible
 	export PATH="$PATH:~/.local/bin"
