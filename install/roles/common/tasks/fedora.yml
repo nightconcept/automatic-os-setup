@@ -1,0 +1,6 @@
+- name: Install common Linux tools (Fedora)
+  become: true
+  ansible.builtin.dnf5:
+    state: latest
+    name: "{{ item.name | default(item) }}"
+  loop: "{{ common_all_with_nix }}"

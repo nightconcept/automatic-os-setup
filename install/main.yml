@@ -1,0 +1,36 @@
+---
+- name: Bootstrap development environment
+  hosts: localhost
+  tasks:
+
+    - name: Distribution Name
+      debug: msg="{{ ansible_distribution }}"
+
+    - name: Update all submodules
+      tags:
+        - submodules
+        - server
+      command:
+        cmd: git submodule update --force --init --recursive --jobs 4
+      changed_when: false
+
+    - name: Pre-install
+      tags: 
+        - pre_install
+        - server
+      import_role:
+        name: pre_install
+
+    - name: Common tools
+      tags:
+        - common
+        - server
+      import_role:
+        name: common
+
+    - name: Archlinux Setup
+      tags: archlinux
+      import_role:
+        name: archlinux
+      when: ansible_distribution == "Archlinux"
+

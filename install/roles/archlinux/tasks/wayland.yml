@@ -1,0 +1,14 @@
+- tags: wayland
+  block:
+
+    - name: Install wayland package
+      become: true
+      pacman:
+        name: 
+          - wayland
+          - xorg-xwayland
+          - xorg-xlsclients
+          - qt5-wayland
+          - glfw-wayland
+          - plasma-wayland-session
+        state: present

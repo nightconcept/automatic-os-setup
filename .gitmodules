@@ -1,0 +1,3 @@
+[submodule "install/lib/aur"]
+	path = install/lib/aur
+	url = https://github.com/nightconcept/ansible-aur
