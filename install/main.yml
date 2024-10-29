@@ -34,3 +34,8 @@
         name: archlinux
       when: ansible_distribution == "Archlinux"
 
+    - name: Fedora Setup
+      tags: fedora
+      import_role:
+        name: fedora
+      when: ansible_distribution == "Fedora"
