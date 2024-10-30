@@ -39,8 +39,8 @@ elif [ "$DISTRO" == "EndeavourOS" ]; then
 	source venv/bin/activate
 	pip3 install ansible
 	export PATH="$PATH:~/.local/bin"
-elif [ "$DISTRO" == "Fedora" ]; then
-	sudo dnf update
+elif [ "$DISTRO" == "Fedora" ] || [[ "$DISTRO" == *"fedora"* ]]; then
+	sudo dnf -y update
 	sudo dnf -y install ansible
 	export PATH="$PATH:~/.local/bin"
 fi
