@@ -97,17 +97,25 @@ fedora_remove:
     - kmousetool
     - kaddressbook
     - korganizer
-    - akregator
+    #- akregator
     - kcharselect
     - dragon
     - elisa
     - kmahjongg
     - kmines
-    - kolourpaint
+    #- kolourpaint
     - kpatience
     - kpat
     - ktnef
     - sieveeditor
+    - libreoffice-core
+
+fedora_flatpaks:
+    - net.lutris.Lutris
+    - com.discordapp.Discord
+    - us.zoom.Zoom
+    - com.github.IsmaelMartinez.teams_for_linux
+    - io.github.Hexchat
 
 install_homebrew_if_missing: true
 

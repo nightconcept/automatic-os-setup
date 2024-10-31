@@ -13,3 +13,11 @@
     name: "{{ item.name | default(item) }}"
   loop: "{{ fedora_remove }}"
   when: ansible_distribution == "Fedora"
+
+- name: Install flatpaks on Fedora
+  become: true
+  community.general.flatpak:
+    state: latest
+    name: "{{ item.name | default(item) }}"
+  loop: "{{ fedora_flatpaks }}"
+  when: ansible_distribution == "Fedora"
