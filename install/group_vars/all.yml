@@ -27,10 +27,12 @@ common_all_with_nix: # Used for systems with dotfiles-nix to manage rest of pack
 #TODO: Consider rolling to/from common_all after confirming dotfiles-nix WILL ALWAYS be used alongside this repo
     - bat                 # Cat clone with syntax highlighting and git integration (`cat` alternative)
     - btop                # A graphical process/system monitor (`htop` alternative)
+    - cifs-utils
     - curl                # Network utility to retrieve files from the Web
     - gcc                 # GCC compiler
     - gh                  # GitHub CLI
     - git                 # Git
+    - neovim
     - vim                 # Easily usable by anyone
     - wget                # Network utility to retrieve files from the Web (used by Neovim to download files on the internet when pressing `gf`)
     - zsh                 # Zsh
@@ -116,6 +118,9 @@ fedora_flatpaks:
     - us.zoom.Zoom
     - com.github.IsmaelMartinez.teams_for_linux
     - io.github.Hexchat
+
+gaming:
+    - steam
 
 install_homebrew_if_missing: true
 
